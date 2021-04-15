@@ -1,0 +1,16 @@
+# This .editorconfig file is used to maintain consistent code style.
+# This .editorconfig is used by IDEs like Visual Studio Code to auto-format code.
+# See https://editorconfig.org for more info.
+
+root = true
+
+[*]
+charset = uft-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.html]
+indent_style = tab
