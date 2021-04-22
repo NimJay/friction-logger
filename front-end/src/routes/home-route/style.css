@@ -1,0 +1,32 @@
+.HomeRoute {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.HomeRoute img {
+  opacity: 0.75; /* To match the greyness of the font. */
+}
+
+.HomeRoute h1 {
+  font-size: 60px;
+  margin-bottom: 50px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Styles for the "Sign in with Google" button. */
+
+.HomeRoute button {
+  padding: 10px 20px !important;
+  width: 280px;
+  border-radius: 40px !important;
+  overflow: hidden;
+}
+
+.HomeRoute button span {
+  font-size: 20px !important;
+  font-weight: normal !important;
+  display: inline-block !important;
+  width: 280px;
+  border-radius: 100% !important;
+}
