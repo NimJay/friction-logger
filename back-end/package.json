@@ -1,0 +1,18 @@
+{
+  "name": "friction-logger-back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handle-create-event-from-speech.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.6.0",
+    "google-auth-library": "^7.0.4"
+  }
+}
