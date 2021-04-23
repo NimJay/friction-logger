@@ -1,6 +1,7 @@
 import { Component, h } from 'preact';
 import { route } from 'preact-router';
 import { GoogleLogin } from 'react-google-login';
+import { isSignedInViaGoogle, signInViaGoogle } from '../../google-sign-in';
 import style from './style.css';
 
 class HomeRoute extends Component {
@@ -9,18 +10,24 @@ class HomeRoute extends Component {
     super(props);
     this.state = {
     };
-    this.onGoogleSignIn = this.onGoogleSignIn.bind(this);
+    this.onGoogleSignInSuccess = this.onGoogleSignInSuccess.bind(this);
+    this.onGoogleSignInFailure = this.onGoogleSignInFailure.bind(this);
   }
 
-  onComponentDidMount() {
-    const isLoggedIn = false; // TODO
-    if (isLoggedIn) {
+  componentDidMount() {
+    if (isSignedInViaGoogle()) {
       route('/friction-logs');
     }
   }
 
-  onGoogleSignIn(googleSignInInfo) {
-    // TODO: Make use of googleSignInInfo.
+  onGoogleSignInSuccess(googleSignInInfo) {
+    const { tokenId } = googleSignInInfo;
+    signInViaGoogle(tokenId);
+    route('/friction-logs');
+  }
+
+  onGoogleSignInFailure() {
+    // TODO: Handle failures.
   }
 
   render() {
@@ -32,8 +39,8 @@ class HomeRoute extends Component {
           <GoogleLogin
             clientId="1052534869599-cecih1nddg81jh8dnpjckbsmj8912aj6.apps.googleusercontent.com"
             buttonText="Sign in with Google"
-            onSuccess={this.onGoogleSignIn}
-            onFailure={this.onGoogleSignIn}
+            onSuccess={this.onGoogleSignInSuccess}
+            onFailure={this.onGoogleSignInFailure}
             cookiePolicy={'single_host_origin'} />
         </main>
       </div>
