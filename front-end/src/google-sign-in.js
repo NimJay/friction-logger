@@ -3,6 +3,10 @@ function signInViaGoogle(googleIdToken) {
 }
 
 function isSignedInViaGoogle() {
+  return !!getGoogleIdToken();
+}
+
+function getGoogleIdToken() {
   return getCookie('googleIdToken');
 }
 
@@ -18,4 +22,4 @@ function signOutViaGoogle() {
   document.cookie = 'googleIdToken=; Max-Age=-99999999; path=/';
 }
 
-export { signInViaGoogle, isSignedInViaGoogle, signOutViaGoogle };
+export { signInViaGoogle, isSignedInViaGoogle, signOutViaGoogle, getGoogleIdToken };
