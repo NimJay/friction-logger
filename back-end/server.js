@@ -2,13 +2,23 @@
 
 const express = require('express');
 const cors = require('cors');
+const firebaseAdmin = require('firebase-admin');
+const serviceAccount = require('./private-stuff/nimjay-starter-project-eaa5f55fd0fe.json');
 const { handleGetMyFrictionLogs } = require('./handle-get-my-friction-logs');
 const { handleCreateFrictionLog } = require('./handle-create-friction-log');
 const { handleGetEventsByFrictionLogId } = require('./handle-get-events-by-friction-log-id');
 const { handleCreateEventFromChromeExtension } = require(
-  './handle-create-event-from-chrome-extension.js');
+  './handle-create-event-from-chrome-extension');
 
 const app = express();
+
+app.use(express.json());
+app.use(cors());
+
+app.use((req, _, next) => {
+  console.log(`Just got a request at: ${req.url}`);
+  next();
+});
 
 // Serve the static front-end files.
 app.use(express.static(__dirname + '/front-end-build'));
@@ -24,6 +34,9 @@ app.post('/back-end/create-event-from-chrome-extension', cors(),
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`The Friction Logger Node.js server is now running on port ${PORT}.`);
+  firebaseAdmin.initializeApp({
+    credential: firebaseAdmin.credential.cert(serviceAccount)
+  });
 });
 
 module.exports = app;
