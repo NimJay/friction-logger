@@ -1,2 +1,63 @@
 .FrictionLogsRoute {
+  margin-top: 50px;
 }
+
+.FrictionLogsRoute main, .FrictionLogsRoute section {
+  margin: auto;
+  width: 100%;
+  max-width: 800px;
+  padding: 15px;
+}
+
+.FrictionLogsRoute h1 {
+  font-size: 20px;
+  font-weight: normal;
+  opacity: 0.5;
+}
+
+.FrictionLogsRoute ol {
+  padding-left: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.FrictionLogsRoute a {
+  display: block;
+  font-size: 20px;
+  padding: 20px;
+  border-top: solid 1px rgba(0, 0, 0, 0.05);
+  color: #3e4b78;
+  text-decoration: none;
+}
+
+.FrictionLogsRoute a:hover {
+  background-color:rgba(0, 0, 0, 0.05);
+}
+
+.FrictionLogsRoute li:first-child a {
+  border-top: none;
+}
+
+.FrictionLogsRoute button {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  border: none;
+  border-top: solid 1px rgba(0, 0, 0, 0.05);
+  outline: none;
+  text-align: left;
+  background: none;
+  color: #73af45;
+  cursor: pointer;
+}
+
+.FrictionLogsRoute button:hover {
+  background-color:rgba(0, 0, 0, 0.05);
+}
+
+.FrictionLogsRoute button:disabled {
+  color: rgba(0, 0, 0, 0.2);
+  cursor: progress;
+}
+
