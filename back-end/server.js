@@ -9,6 +9,7 @@ const { handleCreateFrictionLog } = require('./handle-create-friction-log');
 const { handleGetEventsByFrictionLogId } = require('./handle-get-events-by-friction-log-id');
 const { handleCreateEventFromChromeExtension } = require(
   './handle-create-event-from-chrome-extension');
+const { handleUpdateFrictionLog } = require('./handle-update-friction-log');
 
 const app = express();
 
@@ -30,6 +31,7 @@ app.post('/back-end/get-events-by-friction-log-id', handleGetEventsByFrictionLog
 app.options('/back-end/create-event-from-chrome-extension', cors());
 app.post('/back-end/create-event-from-chrome-extension', cors(),
   handleCreateEventFromChromeExtension);
+app.post('/back-end/update-friction-log', handleUpdateFrictionLog);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
