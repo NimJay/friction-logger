@@ -27,7 +27,6 @@
   font-size: 20px;
   padding: 20px;
   border-top: solid 1px rgba(0, 0, 0, 0.05);
-  color: #3e4b78;
   text-decoration: none;
 }
 
@@ -48,7 +47,7 @@
   outline: none;
   text-align: left;
   background: none;
-  color: #73af45;
+  color: #34A853;
   cursor: pointer;
 }
 
