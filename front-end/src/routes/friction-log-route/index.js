@@ -12,6 +12,7 @@ class FrictionLogRoute extends Component {
     this.state = {
       isInitialDataLoaded: false,
       name: '',
+      status: '',
     };
     this.data = new FrictionLogRouteData(props.frictionLogId);
     this.onInputName = this.onInputName.bind(this);
@@ -22,6 +23,14 @@ class FrictionLogRoute extends Component {
       route('/');
       return;
     }
+    this.data.listenToOnChangeStatus((newStatus) => {
+      if (newStatus === 'Inactive') {
+        this.setState({ status: '' });
+      }
+      if (newStatus === 'Saving') {
+        this.setState({ status: 'Saving...' });
+      }
+    });
     await this.data.load();
     this.setState({
       name: this.data.frictionLog.name,
@@ -29,8 +38,11 @@ class FrictionLogRoute extends Component {
     });
   }
 
+  componentWillUnmount() {
+    this.data.stopListeningToOnChangeStatus();
+  }
+
   onInputName(e) {
-    console.log(3);
     const name = e.target.value;
     this.setState({ name }, async () => {
       await this.data.updateFrictionLogNameWhenReady(name);
@@ -38,7 +50,7 @@ class FrictionLogRoute extends Component {
   }
 
   render() {
-    const { isInitialDataLoaded, name } = this.state;
+    const { isInitialDataLoaded, name, status } = this.state;
 
     if (!isInitialDataLoaded) {
       return;
@@ -56,7 +68,7 @@ class FrictionLogRoute extends Component {
             <Link href="/friction-logs">
               &larr; All Friction Logs
             </Link>
-            <span>Status here...</span>
+            <span>{status}</span>
           </header>
           <form>
             <input type="text" value={name} onInput={this.onInputName} />
