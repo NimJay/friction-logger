@@ -1,2 +1,49 @@
 .FrictionLogRoute {
+  margin-top: 100px;
+}
+
+.FrictionLogRoute header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: white;
+  box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.03);
+}
+
+.FrictionLogRoute header > * {
+  padding: 15px;
+}
+
+.FrictionLogRoute header > a {
+  text-decoration: none;
+}
+
+@media(max-width: 600px) {
+  .FrictionLogRoute header {
+    font-size: 16px;
+  }
+}
+
+.FrictionLogRoute main {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.FrictionLogRoute main input {
+  font-size: 30px;
+  width: 400px;
+  max-width: 100%;
+  margin-bottom: 50px;
+  border: none;
+  border-bottom: solid 2px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.FrictionLogRoute main input:focus {
+  border-bottom: solid 2px #34A853;
 }
