@@ -2,7 +2,7 @@ import { Component, h } from 'preact';
 import { Link, route } from 'preact-router';
 import SecretIdSection from '../../components/secret-id-section';
 import { isSignedInViaGoogle } from '../../google-sign-in';
-import FrictionLogRouteData from './friction-log-route-data';
+import FrictionLogData from './friction-log-data';
 import style from './style.css';
 
 class FrictionLogRoute extends Component {
@@ -14,7 +14,7 @@ class FrictionLogRoute extends Component {
       name: '',
       status: '',
     };
-    this.data = new FrictionLogRouteData(props.frictionLogId);
+    this.frictionLogData = new FrictionLogData(props.frictionLogId);
     this.onInputName = this.onInputName.bind(this);
   }
 
@@ -23,7 +23,7 @@ class FrictionLogRoute extends Component {
       route('/');
       return;
     }
-    this.data.listenToOnChangeStatus((newStatus) => {
+    this.frictionLogData.listenToOnChangeStatus((newStatus) => {
       if (newStatus === 'Inactive') {
         this.setState({ status: '' });
       }
@@ -31,21 +31,21 @@ class FrictionLogRoute extends Component {
         this.setState({ status: 'Saving...' });
       }
     });
-    await this.data.load();
+    await this.frictionLogData.load();
     this.setState({
-      name: this.data.frictionLog.name,
+      name: this.frictionLogData.frictionLog.name,
       isInitialDataLoaded: true
     });
   }
 
   componentWillUnmount() {
-    this.data.stopListeningToOnChangeStatus();
+    this.frictionLogData.stopListeningToOnChangeStatus();
   }
 
   onInputName(e) {
     const name = e.target.value;
     this.setState({ name }, async () => {
-      await this.data.updateFrictionLogNameWhenReady(name);
+      await this.frictionLogData.updateFrictionLogNameWhenReady(name);
     });
   }
 
@@ -56,7 +56,7 @@ class FrictionLogRoute extends Component {
       return;
     }
 
-    const frictionLog = this.data.frictionLog;
+    const frictionLog = this.frictionLogData.frictionLog;
     if (!frictionLog) {
       return;
     }

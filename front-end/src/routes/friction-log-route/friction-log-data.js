@@ -3,12 +3,12 @@ import { getMyFrictionLogs, updateFrictionLog } from "../../back-end-api";
 const MILLISEC_WAIT_BEFORE_SAVING = 1000;
 const MILLISEC_WAIT_BEFORE_SAVING_MAX = 3000;
 
-class FrictionLogRouteData {
+class FrictionLogData {
 
   constructor(frictionLogId) {
     this.frictionLogId = frictionLogId;
     this.frictionLog = null;
-    this.lastSaveId = 0;
+    this.lastChangeId = 0;
     this.timeLoadedFromServer = 0;
     this.timeOfLastSave = 0;
 
@@ -45,11 +45,11 @@ class FrictionLogRouteData {
 
   async updateFrictionLogNameWhenReady(frictionLogName) {
     this.frictionLog.name = frictionLogName;
-    this.lastSaveId += 1;
-    const saveId = this.lastSaveId;
+    this.lastChangeId += 1;
+    const changeId = this.lastChangeId;
     await this.waitXMilliseconds(MILLISEC_WAIT_BEFORE_SAVING);
     // A few moments later...
-    const hasNewChangeTriggeredNewSave = saveId !== this.lastSaveId;
+    const hasNewChangeTriggeredNewSave = changeId !== this.lastChangeId;
     if (!hasNewChangeTriggeredNewSave || this.isWaitingTooLongToSaveChanges()) {;
       this.timeOfLastSave = Date.now();
       this.updateStatus('Saving');
@@ -73,4 +73,4 @@ class FrictionLogRouteData {
 
 }
 
-export default FrictionLogRouteData;
+export default FrictionLogData;
