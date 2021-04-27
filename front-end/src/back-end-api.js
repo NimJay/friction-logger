@@ -15,6 +15,13 @@ function createFrictionLog(frictionLogName) {
   });
 }
 
+function updateFrictionLog(frictionLog) {
+  return makePostRequest('/back-end/update-friction-log', {
+    frictionLog,
+    googleIdToken: getGoogleIdToken(),
+  });
+}
+
 function makePostRequest(path, body) {
   const headers = {
     'Content-Type': 'application/json',
@@ -27,4 +34,4 @@ function makePostRequest(path, body) {
   return promise.then((response) => response.json());
 }
 
-export { getMyFrictionLogs, createFrictionLog };
+export { getMyFrictionLogs, createFrictionLog, updateFrictionLog };
