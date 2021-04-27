@@ -25,13 +25,18 @@
 .FrictionLogsRoute a {
   display: block;
   font-size: 20px;
-  padding: 20px;
+  padding: 20px 30px;
   border-top: solid 1px rgba(0, 0, 0, 0.05);
   text-decoration: none;
 }
 
 .FrictionLogsRoute a:hover {
   background-color:rgba(0, 0, 0, 0.05);
+}
+
+.FrictionLogsRoute li, .FrictionLogsRoute button {
+  border-radius: 50px;
+  overflow: hidden;
 }
 
 .FrictionLogsRoute li:first-child a {
@@ -41,7 +46,7 @@
 .FrictionLogsRoute button {
   display: block;
   width: 100%;
-  padding: 20px;
+  padding: 20px 30px;
   border: none;
   border-top: solid 1px rgba(0, 0, 0, 0.05);
   outline: none;
