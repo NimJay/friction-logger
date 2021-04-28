@@ -11,6 +11,7 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
+    "@google-cloud/speech": "^4.4.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "firebase-admin": "^9.6.0",
