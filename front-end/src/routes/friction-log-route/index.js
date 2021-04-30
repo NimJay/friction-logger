@@ -2,6 +2,8 @@ import { Component, h } from 'preact';
 import { Link, route } from 'preact-router';
 import SecretIdSection from '../../components/secret-id-section';
 import { isSignedInViaGoogle } from '../../google-sign-in';
+import EventDiv from './event-div';
+import EventsData from './events-data';
 import FrictionLogData from './friction-log-data';
 import style from './style.css';
 
@@ -13,8 +15,10 @@ class FrictionLogRoute extends Component {
       isInitialDataLoaded: false,
       name: '',
       status: '',
+      events: [],
     };
     this.frictionLogData = new FrictionLogData(props.frictionLogId);
+    this.eventsData = new EventsData(props.frictionLogId);
     this.onInputName = this.onInputName.bind(this);
   }
 
@@ -32,14 +36,26 @@ class FrictionLogRoute extends Component {
       }
     });
     await this.frictionLogData.load();
+    await this.eventsData.load();
+    this.eventsData.listenToOnNewEvent((newEvent) => {
+      const { events } = this.state;
+      events.unshift(this.clone(newEvent));
+      this.setState({ events });
+    });
     this.setState({
-      name: this.frictionLogData.frictionLog.name,
+      events: this.clone(this.eventsData.getEvents()),
+      name: this.frictionLogData.getFrictionLogName(),
       isInitialDataLoaded: true
     });
   }
 
+  clone(thing) {
+    return JSON.parse(JSON.stringify(thing));
+  }
+
   componentWillUnmount() {
     this.frictionLogData.stopListeningToOnChangeStatus();
+    this.eventsData.stopListeningToOnNewEvent();
   }
 
   onInputName(e) {
@@ -50,7 +66,7 @@ class FrictionLogRoute extends Component {
   }
 
   render() {
-    const { isInitialDataLoaded, name, status } = this.state;
+    const { isInitialDataLoaded, name, status, events } = this.state;
 
     if (!isInitialDataLoaded) {
       return;
@@ -60,6 +76,23 @@ class FrictionLogRoute extends Component {
     if (!frictionLog) {
       return;
     }
+
+    const eventDivs = events.map((event, index) => {
+      const prevEventTimeWise = events[index + 1];
+      const nextEventTimeWise = events[index - 1];
+      const dateNumber = (new Date(event.serverCreateTime)).getDate();
+      const isLastEventOfDay = !nextEventTimeWise
+        || dateNumber < (new Date(nextEventTimeWise.serverCreateTime)).getDate();
+      const isFirstEventOfDay = !prevEventTimeWise
+        || dateNumber > (new Date(prevEventTimeWise.serverCreateTime)).getDate();
+      const isUrlDiffFromPrev = event.url !== prevEventTimeWise?.url;
+      const shouldShowUrl = isFirstEventOfDay || isUrlDiffFromPrev;
+      return (
+        <EventDiv
+          event={event} shouldShowDate={isLastEventOfDay} shouldShowUrl={shouldShowUrl}
+          key={event.id} />
+      );
+    });
 
     return (
       <div class={style.FrictionLogRoute}>
@@ -74,6 +107,9 @@ class FrictionLogRoute extends Component {
             <input type="text" value={name} onInput={this.onInputName} />
           </form>
           <SecretIdSection secretId={frictionLog.secretId} />
+          <div className={style.FrictionLogRouteEvents}>
+            {eventDivs}
+          </div>
         </main>
       </div>
     );

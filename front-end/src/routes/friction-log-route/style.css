@@ -47,3 +47,7 @@
 .FrictionLogRoute main input:focus {
   border-bottom: solid 2px #34A853;
 }
+
+.FrictionLogRouteEvents {
+  padding: 50px 0;
+}
