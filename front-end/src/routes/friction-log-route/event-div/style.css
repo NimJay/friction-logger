@@ -1,0 +1,38 @@
+.EventDiv {
+  padding: 0;
+  border-right: solid 4px rgba(0, 0, 0, 0.05);
+}
+
+.EventDiv > * {
+  display: block;
+  padding-right: 30px;
+}
+
+.EventDivDate {
+  font-size: 14px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-top: solid 4px rgba(0, 0, 0, 0.05);
+  text-align: right;
+  opacity: 0.5;
+}
+
+.EventDivText {
+  font-size: 20px;
+}
+
+.EventDivUrl {
+  font-size: 14px;
+  text-align: right;
+}
+
+.EventDivUrl a {
+  text-decoration: none;
+}
+
+.EventDivTime {
+  font-size: 14px;
+  padding-bottom: 30px;
+  text-align: right;
+  opacity: 0.5;
+}
