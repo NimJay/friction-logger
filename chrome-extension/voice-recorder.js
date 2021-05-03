@@ -88,10 +88,14 @@ window.onload = () => {
       return;
     }
     isSaving = true;
+    document.getElementById('status').innerHTML = 'Recording stopped.';
     const base64Audio = await audioRecorder.stopRecording();
     const { url, secretId } = await getSecretIdAndUrl();
     if (isNonEmptyString(url) && isNonEmptyString(secretId)) {
+      document.getElementById('status').innerHTML = 'Saving to Friction Log...';
       await createEventViaPostRequest(base64Audio, url, secretId);
+    } else {
+      // TODO: Let the user know that they need to fill in the Secret ID.
     }
     window.close();
   };

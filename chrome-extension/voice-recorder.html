@@ -10,11 +10,17 @@
 			padding: 0;
 			font-size: 20px;
 		}
+
 		main {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			height: 100vh;
+		}
+
+		#status span {
+			display: block;
+			font-size: 14px;
 		}
 	</style>
 	<script src="./voice-recorder.js"></script>
@@ -22,8 +28,10 @@
 
 <body>
 	<main>
-		<p>Recording...</p>
-		<p></p>
+		<p id="status">
+			Recording...
+			<span>Press any key to stop recording.</span>
+		</p>
 	</main>
 </body>
 
