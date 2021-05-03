@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="150mm"
+   height="150mm"
+   viewBox="0 0 150 150"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   sodipodi:docname="logo.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="49.455607"
+     inkscape:cy="-34.490454"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1792"
+     inkscape:window-height="1120"
+     inkscape:window-x="334"
+     inkscape:window-y="1440"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(329.52084,-6.0665407)">
+    <rect
+       inkscape:export-filename="/Users/nimjay/Desktop/friction-logger/front-end/src/assets/icons/mstile-150x150.png"
+       style="opacity:0;fill:#f2f2f2;fill-rule:evenodd;stroke-width:0.374237"
+       id="rect10"
+       width="150"
+       height="150"
+       x="-329.52084"
+       y="6.0665407"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <g
+       inkscape:export-filename="/Users/nimjay/Desktop/friction-logger/front-end/src/assets/icons/mstile-150x150.png"
+       id="g95"
+       transform="translate(-1.267277,-0.23384258)"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4">
+      <g
+         style="fill:#000000"
+         transform="matrix(0.99481895,0,0,1.0666669,-1.7503004,0.07664938)"
+         id="g38">
+        <rect
+           style="fill:#000000;fill-rule:evenodd;stroke-width:0.31483"
+           id="rect16"
+           width="41.743458"
+           height="9.8273811"
+           x="-253.77925"
+           y="-190.66801"
+           transform="rotate(-45.348593)" />
+        <rect
+           transform="matrix(-0.70279162,-0.71139577,-0.71139577,0.70279162,0,0)"
+           y="214.34013"
+           x="146.33041"
+           height="9.8273811"
+           width="41.743458"
+           id="rect20"
+           style="fill:#000000;fill-rule:evenodd;stroke-width:0.31483" />
+        <rect
+           transform="rotate(-45.348593)"
+           y="-158.8746"
+           x="-222.37038"
+           height="9.8273811"
+           width="41.743458"
+           id="rect22"
+           style="fill:#000000;fill-rule:evenodd;stroke-width:0.31483" />
+        <rect
+           style="fill:#000000;fill-rule:evenodd;stroke-width:0.31483"
+           id="rect24"
+           width="41.743458"
+           height="9.8273811"
+           x="114.92154"
+           y="182.54672"
+           transform="matrix(-0.70279162,-0.71139577,-0.71139577,0.70279162,0,0)" />
+      </g>
+      <g
+         style="fill:#000000"
+         transform="matrix(0.99481895,0,0,-1.0666669,21.381677,118.78609)"
+         id="g68">
+        <rect
+           transform="rotate(-45.348593)"
+           y="-190.66801"
+           x="-253.77925"
+           height="9.8273811"
+           width="41.743458"
+           id="rect60"
+           style="fill:#000000;fill-rule:evenodd;stroke-width:0.31483" />
+        <rect
+           style="fill:#000000;fill-rule:evenodd;stroke-width:0.31483"
+           id="rect62"
+           width="41.743458"
+           height="9.8273811"
+           x="146.33041"
+           y="214.34013"
+           transform="matrix(-0.70279162,-0.71139577,-0.71139577,0.70279162,0,0)" />
+        <rect
+           style="fill:#000000;fill-rule:evenodd;stroke-width:0.31483"
+           id="rect64"
+           width="41.743458"
+           height="9.8273811"
+           x="-222.37038"
+           y="-158.8746"
+           transform="rotate(-45.348593)" />
+        <rect
+           transform="matrix(-0.70279162,-0.71139577,-0.71139577,0.70279162,0,0)"
+           y="182.54672"
+           x="114.92154"
+           height="9.8273811"
+           width="41.743458"
+           id="rect66"
+           style="fill:#000000;fill-rule:evenodd;stroke-width:0.31483" />
+      </g>
+      <g
+         style="fill:#000000"
+         transform="matrix(0.99481895,0,0,1.0666669,0.37677793,87.552689)"
+         id="g78">
+        <rect
+           transform="rotate(-45.348593)"
+           y="-190.66801"
+           x="-253.77925"
+           height="9.8273811"
+           width="41.743458"
+           id="rect70"
+           style="fill:#000000;fill-rule:evenodd;stroke-width:0.31483" />
+        <rect
+           style="fill:#000000;fill-rule:evenodd;stroke-width:0.31483"
+           id="rect72"
+           width="41.743458"
+           height="9.8273811"
+           x="146.33041"
+           y="214.34013"
+           transform="matrix(-0.70279162,-0.71139577,-0.71139577,0.70279162,0,0)" />
+        <rect
+           style="fill:#000000;fill-rule:evenodd;stroke-width:0.31483"
+           id="rect74"
+           width="41.743458"
+           height="9.8273811"
+           x="-222.37038"
+           y="-158.8746"
+           transform="rotate(-45.348593)" />
+        <rect
+           transform="matrix(-0.70279162,-0.71139577,-0.71139577,0.70279162,0,0)"
+           y="182.54672"
+           x="114.92154"
+           height="9.8273811"
+           width="41.743458"
+           id="rect76"
+           style="fill:#000000;fill-rule:evenodd;stroke-width:0.31483" />
+      </g>
+    </g>
+  </g>
+</svg>
