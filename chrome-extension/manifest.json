@@ -1,0 +1,29 @@
+{
+  "name": "Friction Logger",
+  "description": "A tool that helps produce friction logs and self-conduct think-aloud studies.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/logo-16x16.png",
+      "32": "images/logo-32x32.png"
+    },
+    "default_title": "Friction Logger Popup",
+    "default_popup": "popup.html"
+  },
+  "commands": {
+    "toggle-event-recording": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E",
+        "mac": "Command+Shift+E"
+      },
+      "description": "This shortcut is used to start and stop a friction log event voice recording."
+    }
+  },
+  "permissions": [
+    "storage"
+  ]
+}
