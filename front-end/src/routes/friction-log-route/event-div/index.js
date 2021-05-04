@@ -19,12 +19,15 @@ class EventDiv extends Component {
 
   render() {
     const { event, shouldShowDate, shouldShowUrl } = this.props;
+    const shouldShowNewBubble = Date.now() - event.serverCreateTime < 10000;
     return (
       <div class={style.EventDiv}>
         {shouldShowDate
           && <span class={style.EventDivDate}>
             {(new Date(event.serverCreateTime)).toDateString()}
           </span>}
+        {shouldShowNewBubble
+          && <span className={style.EventDivNew}><span>New</span></span>}
         <span className={style.EventDivText}>{event.text}</span>
         {shouldShowUrl
           && <span class={style.EventDivUrl}>
