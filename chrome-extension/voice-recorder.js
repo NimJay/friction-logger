@@ -98,7 +98,7 @@ window.onload = () => {
     const base64Audio = await audioRecorder.stopRecording();
     const { url, secretId } = await getSecretIdAndUrl();
     if (isNonEmptyString(url) && isNonEmptyString(secretId)) {
-      document.getElementById('status').innerHTML = 'Saving to Friction Log...';
+      document.getElementById('status').innerHTML = 'Saving...';
       const { event } = await createEventViaPostRequest(base64Audio, url, secretId);
       document.getElementById('status').innerHTML = `"${event.text}"`;
       await waitXMilliseconds(1500);
