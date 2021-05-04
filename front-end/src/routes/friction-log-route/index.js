@@ -20,9 +20,11 @@ class FrictionLogRoute extends Component {
     this.frictionLogData = new FrictionLogData(props.frictionLogId);
     this.eventsData = new EventsData(props.frictionLogId);
     this.onInputName = this.onInputName.bind(this);
+    this.updateHtmlDocumentTitle = this.updateHtmlDocumentTitle.bind(this);
   }
 
   async componentDidMount() {
+    this.updateHtmlDocumentTitle();
     if (!isSignedInViaGoogle()) {
       route('/');
       return;
@@ -46,7 +48,12 @@ class FrictionLogRoute extends Component {
       events: this.clone(this.eventsData.getEvents()),
       name: this.frictionLogData.getFrictionLogName(),
       isInitialDataLoaded: true
-    });
+    }, this.updateHtmlDocumentTitle);
+  }
+
+  updateHtmlDocumentTitle() {
+    const { name } = this.state;
+    document.title = name ? `${name}` : 'Loading...';
   }
 
   clone(thing) {
@@ -61,6 +68,7 @@ class FrictionLogRoute extends Component {
   onInputName(e) {
     const name = e.target.value;
     this.setState({ name }, async () => {
+      this.updateHtmlDocumentTitle();
       await this.frictionLogData.updateFrictionLogNameWhenReady(name);
     });
   }

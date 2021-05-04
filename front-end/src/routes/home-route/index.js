@@ -15,6 +15,7 @@ class HomeRoute extends Component {
   }
 
   componentDidMount() {
+    document.title = 'Friction Logger';
     if (isSignedInViaGoogle()) {
       route('/friction-logs');
     }

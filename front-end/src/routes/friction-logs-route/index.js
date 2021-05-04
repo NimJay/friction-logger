@@ -19,6 +19,7 @@ class FrictionLogsRoute extends Component {
   }
 
   async componentDidMount() {
+    document.title = 'My Friction Logs';
     if (!isSignedInViaGoogle()) {
       route('/');
     }
