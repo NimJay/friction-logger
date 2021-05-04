@@ -62,7 +62,7 @@ function createEventViaPostRequest(base64Audio, url, frictionLogSecretId) {
       url,
       frictionLogSecretId,
     })
-  });
+  }).then((response) => response.json());
 }
 
 async function getSecretIdAndUrl() {
@@ -72,6 +72,12 @@ async function getSecretIdAndUrl() {
       ({ frictionLogSecretId, eventUrl }) => {
         resolve({ secretId: frictionLogSecretId, url: eventUrl });
       });
+  });
+}
+
+function waitXMilliseconds(x) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, x);
   });
 }
 
@@ -93,7 +99,9 @@ window.onload = () => {
     const { url, secretId } = await getSecretIdAndUrl();
     if (isNonEmptyString(url) && isNonEmptyString(secretId)) {
       document.getElementById('status').innerHTML = 'Saving to Friction Log...';
-      await createEventViaPostRequest(base64Audio, url, secretId);
+      const { event } = await createEventViaPostRequest(base64Audio, url, secretId);
+      document.getElementById('status').innerHTML = `"${event.text}"`;
+      await waitXMilliseconds(1500);
     } else {
       // TODO: Let the user know that they need to fill in the Secret ID.
     }
