@@ -33,6 +33,11 @@ app.post('/back-end/create-event-from-chrome-extension', cors(),
   handleCreateEventFromChromeExtension);
 app.post('/back-end/update-friction-log', handleUpdateFrictionLog);
 
+// Send index.html for front-end pages.
+const sendIndexDotHtml = (_, res) => { res.sendFile(__dirname + '/front-end-build/index.html'); };
+app.get('/friction-logs', sendIndexDotHtml);
+app.get('/friction-logs/:frictionLogId', sendIndexDotHtml);
+
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`The Friction Logger Node.js server is now running on port ${PORT}.`);
