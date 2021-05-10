@@ -1,6 +1,6 @@
 import { getGoogleIdToken } from './google-sign-in';
 
-const SERVER_URL = 'http://localhost:8080';
+const SERVER_URL = 'https://nimjay-starter-project.uc.r.appspot.com';
 
 function getEventsByFrictionLogId(frictionLogId) {
   return makePostRequest('/back-end/get-events-by-friction-log-id', {

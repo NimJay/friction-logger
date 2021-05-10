@@ -1,3 +1,5 @@
+const SERVER_URL = 'https://nimjay-starter-project.uc.r.appspot.com';
+
 function isNonEmptyString(string) {
   return typeof string === 'string' && string !== '';
 }
@@ -54,7 +56,7 @@ class AudioRecorder {
 }
 
 function createEventViaPostRequest(base64Audio, url, frictionLogSecretId) {
-  return fetch('http://localhost:8080/back-end/create-event-from-chrome-extension', {
+  return fetch(`${SERVER_URL}/back-end/create-event-from-chrome-extension`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
