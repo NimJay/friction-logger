@@ -6,3 +6,4 @@ back-end/front-end-build
 
 front-end/node_modules
 front-end/front-end-build
+front-end/size-plugin.json
