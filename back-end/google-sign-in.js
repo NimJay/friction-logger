@@ -15,7 +15,7 @@ const { OAuth2Client } = require('google-auth-library');
  * @returns {GoogleSignInInfo|null}
  */
 async function checkGoogleIdToken(googleIdToken) {
-  const CLIENT_ID = '1052534869599-cecih1nddg81jh8dnpjckbsmj8912aj6.apps.googleusercontent.com';
+  const CLIENT_ID = '1052534869599-2fjbn3llbdauo8af73k1438tjmakn75e.apps.googleusercontent.com';
   const client = new OAuth2Client(CLIENT_ID);
   try {
     console.log("Foo: " + googleIdToken);

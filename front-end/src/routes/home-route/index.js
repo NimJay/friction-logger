@@ -38,7 +38,7 @@ class HomeRoute extends Component {
           <img src="/assets/icons/mstile-150x150.png" alt="Friction Logger logo. 3 horizontal, squiggly lines." />
           <h1>friction logger</h1>
           <GoogleLogin
-            clientId="1052534869599-cecih1nddg81jh8dnpjckbsmj8912aj6.apps.googleusercontent.com"
+            clientId="1052534869599-2fjbn3llbdauo8af73k1438tjmakn75e.apps.googleusercontent.com"
             buttonText="Sign in with Google"
             onSuccess={this.onGoogleSignInSuccess}
             onFailure={this.onGoogleSignInFailure}
