@@ -13,10 +13,11 @@ To develop on your own machine.
 ## Deploying To Production
 
 When we want to deploy this Preact app to production, we need to:
-1. Run `npm run build` from this folder (`front-end/`). This will create a `front-end-build/` folder containing a minified Preact app.
-2. Remove the old build: `rm -r ../back-end/front-end-build`.
-3. Move the generated `front-end-build/` folder into `back-end/`: `mv front-end-build ../back-end`
-4. From the `back-end/` folder, run `gcloud app deploy`.
+1. Inside `back-end-api.js`, set `SERVER_URL` to `'https://nimjay-starter-project.uc.r.appspot.com'`.
+2. Run `npm run build` from this folder (`front-end/`). This will create a `front-end-build/` folder containing a minified Preact app.
+3. Remove the old build: `rm -r ../back-end/front-end-build`.
+4. Move the generated `front-end-build/` folder into `back-end/`: `mv front-end-build ../back-end`
+5. From the `back-end/` folder, run `gcloud app deploy`.
 
 ## Other
 
